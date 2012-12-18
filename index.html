@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.0a4.1.js"></script>
+<script src="js/jquery.zrssfeed.min.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.0a4.1.min.css">
+<link rel="stylesheet" href="css/theme.css">
+<title>UF Mobile</title>
+<style type="text/css">
+iframe{
+	min-height: 100%;
+	height:100%;
+	width: 95%;
+	bottom:0;
+	margin-top:-55px;
+}	
+.fixed_iframe{
+	position: fixed;
+}
+.fixed_iframe_bottom{
+	position:relative;
+	bottom:0;
+	z-index: 100;
+}	
+</style>
+</head>
+<body>
+
+<div data-role="page" data-theme="uf" id="main">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div id="container">
+	<ul id="homenav" data-role="listview">
+	<li id="home-emergency" data-theme="uf">
+	<img src="images/icons/emergency-default.png" alt=" ">
+	<a href="#emergency">
+	<span>Emergency</span><br>
+	<small>Emergency numbers</small>
+	</a>
+	</li><li id="home-calendar" data-theme="uf" data-transition="slide">
+	<img src="images/icons/calendar-default.png" alt=" ">
+	<a href="#calendar">
+	<span>Calendar</span><br>
+	<small>Academic deadlines, events and more</small>
+	</a>
+	</li><li id="home-map" data-theme="uf">
+	<img src="images/icons/map-default.png" alt=" ">
+	<a href="#map">
+	<span>Map</span><br>
+	<small>Find buildings on campus</small>
+	</a>
+	</li><li id="home-rts" data-theme="uf">
+	<img src="images/icons/rts-default.png" alt=" ">
+	<a href="http://ufl.transloc.com/" rel="external">
+	<span>RTS Buses</span><br>
+	<small>Bus routes, information</small>
+	</a>
+	</li><li id="home-people" data-theme="uf">
+	<img src="images/icons/people-default.png" alt=" ">
+	<a href="#people">
+	<span>People</span><br>
+	<small>Find faculty and staff</small>
+	</a>
+	</li><li id="home-isis" data-theme="uf">
+	<img src="images/icons/isis-default.png" alt=" ">
+	<a href="http://www.isis.ufl.edu/mobile/" rel="external">
+	<span>ISIS</span><br>
+	<small>Check your schedule, holds</small>
+	</a>
+	</li><li id="home-elearning" data-theme="uf">
+	<img src="images/icons/elearning-default.png" alt=" ">
+	<a href="http://lss.at.ufl.edu/" rel="external">
+	<span>e-Learning</span><br>
+	<small>Online course information</small>
+	</a>
+	</li><li id="home-dining" data-theme="uf">
+	<img src="images/icons/dining-default.png" alt=" ">
+	<a href="http://www.bsd.ufl.edu/dining/m/hours.aspx" rel="external">
+	<span>Dining</span><br>
+	<small>Gator Dining locations and hours</small>
+	</a>
+	</li><li id="home-news" data-theme="uf">
+	<img src="images/icons/news-default.png" alt=" ">
+	<a href="#news">
+	<span>News</span><br>
+	<small>Get the latest news from UF</small>
+	</a>
+	</li><li id="home-social" data-theme="uf">
+	<img src="images/icons/social-default.png" alt=" ">
+	<a href="#social">
+	<span>Social</span><br>
+	<small>Connect with UF on Facebook, Twitter</small>
+	</a>
+	</li><li id="home-gatorzone" data-theme="uf">
+	<img src="images/icons/gatorzone-default.png" alt=" ">
+	<a href="http://www.gatorzone.com/mobile/" rel="external">
+	<span>GatorZone</span><br>
+	<small>Athletic schedules, scores</small>
+	</a>
+	</li><li id="home-payment" data-theme="uf">
+	<img src="images/icons/payment-default.png" alt=" ">
+	<a href="https://my.ufl.edu/psp/ps/EMPLOYEE/SA/s/WEBLIB_UF.ISCRIPT1.FieldFormula.IScript_map" rel="external">
+	<span>Make a Payment</span><br>
+	<small>What do I owe, pay my bill</small>
+	</a>
+	</li><li id="home-it-alerts" data-theme="uf">
+	<img src="images/icons/it-alerts-default.png" alt=" ">
+	<a href="https://alerts.it.ufl.edu/" rel="external">
+	<span>IT Alerts</span><br>
+	<small>Status of IT emergencies/outages</small>
+	</a>
+	</li><li id="home-links" data-theme="uf">
+	<img src="images/icons/links-default.png" alt=" ">
+	<a href="#links">
+	<span>Links</span><br>
+	<small>Other mobile sites at UF</small>
+	</a>
+	</li> </ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="emergency" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+		<h3>Emergency Contacts</h3>
+	<ul class="rounded" role="listbox" data-role="listview" data-inset="true" data-theme="uf">
+	<li class="phone" role="option" data-icon="phone"><a href="tel:3523921111">Campus Police</a></li>
+	<li class="phone" role="option" data-icon="phone"><a href="tel:3523923261">Campus Operator/Information</a></li>
+	<li class="phone" role="option" data-icon="phone"><a href="tel:3523921575">Counseling &amp; Wellness Center</a></li>
+	<li class="phone" role="option" data-icon="phone"><a href="tel:3523921591">Environmental Health &amp; Safety</a></li>
+	</ul>
+	<ul class="rounded" role="listbox">
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+<div data-role="page" id="calendar" data-theme="uf">
+<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+<iframe src="http://m.ufl.edu/calendar/index.php"></iframe>
+<!--<div id="footer" data-role="footer" class="fixed_iframe_bottom">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+</div>-->
+</div>
+
+<div data-role="page" id="map" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<iframe src="http://m.ufl.edu/map/index.php"></iframe>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+<div data-role="page" id="map-directions" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<ul class="rounded" role="listbox" role="listbox" data-role="listview" data-theme="uf">
+	<li class="arrow" role="option"><a href="#gmaps">Using Google Maps</a></li>
+	<li class="arrow" role="option"><a href="#car">By Car</a></li>
+	<li class="arrow" role="option"><a href="#plane">By Air</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="gmaps" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	<a href="http://www.ufl.edu/?full_site=1" id="full-site" class="ui-btn-right" data-role="button" data-theme="uf" rel="external">Full Site</a>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>To find UF using Google Maps, search for the "<a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=University+of+Florida+Bookstore&amp;aq=&amp;sll=29.645421,-82.348119&amp;sspn=0.0087,0.01222&amp;ie=UTF8&amp;hq=University+of+Florida+Bookstore&amp;hnear=&amp;z=17&amp;iwloc=A" rel="external">University of Florida Bookstore</a>," where the Welcome Center is also located.</p> </div>
+	<ul class="rounded">
+	<li class="arrow"><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=University+of+Florida+Bookstore&amp;aq=&amp;sll=29.645421,-82.348119&amp;sspn=0.0087,0.01222&amp;ie=UTF8&amp;hq=University+of+Florida+Bookstore&amp;hnear=&amp;z=17&amp;iwloc=A" rel="external">UF Bookstore on Google Maps</a></li> </ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+
+
+<div data-role="page" id="car" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p><strong>From I-75:</strong> Take I-75 to exit 387, Newberry Road. When you get off of the ramp go east for five miles; eventually Newberry Road becomes University Avenue (Note: You should pass the Oaks Mall on your right shortly after traveling on Newberry road.) Continue traveling East on University Ave. At the intersection of University Avenue and 13th Street take a right. Enter the parking lot at S.W. 2nd Avenue.</p> </div>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+
+<div data-role="page" id="plane" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>The closest airports are the Gainesville Regional Airport (GNV), the Jacksonville International Airport (JAX), the Orlando International Airport (MCO) and the Tampa International Airport (TPA).</p>
+	<div data-role="collapsible-set">
+	<div data-role="collapsible" data-collapsed="true" data-theme="c">
+	<h3><a name="gainesville" id="gainesville"></a>From Gainesville Regional Airport</h3>
+	<p>Approximately 30 minutes from UF</p>
+	<p>Upon leaving the Gainesville Airport, make a right turn onto 39th Avenue (SR 222), heading west. At US 441 (N.W. 13th Street) make a left turn, heading south. Continue South on 13th Street for several miles. As you approach University Avenue, you will see the Holiday Inn on your left, and directly ahead you will see Bryan Hall just off to your right. Come down to the first right turn after University Avenue and enter the parking lot at S.W. 2nd Avenue.</p>
+	</div>
+	<div data-role="collapsible" data-collapsed="true" data-theme="c">
+	<h3><a name="jacksonville" id="jacksonville"></a>From Jacksonville International Airport</h3>
+	<p><strong>&quot;Easy Way&quot;</strong></p>
+	<p>Approximately 2.5 hours from UF</p>
+	<p>Take I-95 South, toward Jacksonville, to I-295. Exit onto I-10 (Note: If you miss the I-295 exit, follow I-95 to where it intersects with I-10). Take I-10 West (towards Tallahassee) to I-75. Take I-75 to exit 387, Newberry Road. When you get off of the ramp go east for five miles; eventually Newberry Road becomes University Avenue. (Note: You should pass the Oaks Mall on your right shortly after traveling on Newberry road.) Continue traveling East on University Ave. At the intersection of University Avenue and 13th Street take a right. Enter the parking lot at S.W. 2nd Avenue.</p>
+	<p><strong>&quot;Short Route&quot;</strong></p>
+	<p>Approximately 2 hours from UF</p>
+	<p>Take I-10 only as far as US 301 (it will be one of the early exits) at Baldwin. Head south on 301 to Waldo. CAUTION: Beware of speed traps along 301, especially in Lawtey, Starke, Hampton, and Waldo. At Waldo, take a right onto SR 24 to Gainesville (has big sign for Gainesville). Follow SR 24 to 39th Avenue/SR 222, just past the airport. Turn right (West) onto 39 Avenue heading west. At 13th Street make a left turn heading south until you arrive at S.W. 2nd Avenue and make a right into the parking lot. Or keep straight ahead one more block to the Holiday Inn, which will be on your right.</p>
+	</div>
+	<div data-role="collapsible" data-collapsed="true" data-theme="c">
+	<h3><a name="orlando" id="orlando"></a>From Orlando International Airport</h3>
+	<p>Approximately 2.5 hours from UF</p>
+	<p>Follow the directional signs to the Florida Turnpike and ride it until it merges with I-75. Take I-75 to exit 387, Newberry Road. When you get off of the ramp go east for five miles; eventually Newberry Road becomes University Avenue (Note: You should pass the Oaks Mall on your right shortly after traveling on Newberry road.) Continue traveling East on University Ave. At the intersection of University Avenue and 13th Street take a right. Enter the parking lot at S.W. 2nd Avenue.</p>
+	</div>
+	<div data-role="collapsible" data-collapsed="true" data-theme="c">
+	<h3><a name="tampa" id="tampa"></a>From Tampa International Airport</h3>
+	<p>Approximately 2.5 hours from UF</p>
+	<p>Follow the directional signs to I-275 North. Stay on I-275 North until in merges with I-75. Take I-75 to exit 387, Newberry Road. When you get off of the ramp go east for five miles; eventually Newberry Road becomes University Avenue (Note: You should pass the Oaks Mall on your right shortly after traveling on Newberry road.) Continue traveling East on University Ave. At the intersection of University Avenue and 13th Street take a right. Enter the parking lot at S.W. 2nd Avenue.</p>
+	</div>
+	</div> </div>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+<div data-role="page" id="people" data-theme="uf">
+<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+<iframe src="http://m.ufl.edu/people/index.php"></iframe>
+<!--<div id="footer" data-role="footer" class="fixed_iframe_bottom">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+</div>-->
+</div>
+
+<div data-role="page" id="news" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div id="rss_news"></div>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="arrow" role="option"><a href="#news-more">More from UF News</a></li>
+	</ul>
+	<p></p>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="arrow" role="option"><a href="#insideuf">Stories from InsideUF</a></li>
+	<!--<li class="arrow" role="option"><a href="/news/?news=research">Stories from Research News</a></li>TO BE ADDED when main uf feed is located-->
+	</ul>
+	<p></p>
+	<ul class="rounded" data-role="listview" data-theme="uf">
+	<li class="arrow"><a href="../emergency/index.html">Campus emergency information</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="..#about">About</a></li>
+	<li class="last"><a href="..#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="news-more" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	
+	<div id="rss_news_more"></div>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	</ul>
+	<p></p>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="arrow" role="option"><a href="#insideuf">Stories from InsideUF</a></li>
+	<!--<li class="arrow" role="option"><a href="/news/?news=research">Stories from Research News</a></li>TO BE ADDED when main uf feed is located-->
+	</ul>
+	<p></p>
+	<ul class="rounded" data-role="listview" data-theme="uf">
+	<li class="arrow"><a href="/emergency/index.html">Campus emergency information</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+<div data-role="page" id="#insideuf" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div id="rss_news"></div>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="arrow" role="option"><a href="#more-news">More from UF News</a></li>
+	</ul>
+	<p></p>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<!--<li class="arrow" role="option"><a href="/news/?news=research">Stories from Research News</a></li>TO BE ADDED when main uf feed is located-->
+	</ul>
+	<p></p>
+	<ul class="rounded" data-role="listview" data-theme="uf">
+	<li class="arrow"><a href="/emergency/index.html">Campus emergency information</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="social" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	<a href="http://www.ufl.edu/?full_site=1" id="full-site" class="ui-btn-right" data-role="button" data-theme="uf" rel="external">Full Site</a>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>These links may launch third-party websites unaffiliated with the UF Mobile Web.</p>
+	</div>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="external" role="option"><a href="http://mobile.twitter.com/uflorida" rel="external">Twitter</a></li>
+	<li class="external" role="option"><a href="http://m.facebook.com/uflorida" rel="external">Facebook</a></li>
+	<li class="external" role="option"><a href="https://plus.google.com/100376589829333154930/" rel="external">Google+</a></li>
+	<li class="external" role="option"><a href="https://foursquare.com/uflorida" rel="external">Foursquare</a></li>
+	<li role="option"><a href="/youtube/">YouTube</a></li>
+	</ul>
+	<p></p>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="external" role="option"><a href="http://www.urel.ufl.edu/social-media/official-uf-social-media-accounts/" rel="external">Social Media at UF</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	
+	</div>
+</div>
+
+<div data-role="page" id="links" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>These links may launch third-party websites unaffiliated with the UF Mobile Web.</p>
+	</div>
+	<ul class="rounded" role="listbox" data-role="listview" data-theme="uf">
+	<li class="external" role="option"><a href="https://evaluations.ufl.edu/" rel="external">Faculty Evaluations</a></li>
+	<li class="external" role="option"><a href="http://www.uflib.ufl.edu/mobile2/" rel="external">Libraries</a></li>
+	</ul>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="about" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	<a href="http://www.ufl.edu/?full_site=1" id="full-site" class="ui-btn-right" data-role="button" data-theme="uf" rel="external">Full Site</a>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>The UF Mobile Web provides essential UF information and services anytime, anywhere on your mobile device, with an interface optimized for on-the-go access.</p>
+	<p>This site automatically detects the device you're using and delivers an experience optimized for it. You're using the version optimized for the iPhone, iPod Touch, and Android devices.</p>
+	<p>The UF Mobile Web is provided by UF Information Technology, in cooperation with other departments, as a free service* to the UF community.</p>
+	</div>
+	<ul class="rounded" role="listbox">
+	<li class="arrow" role="option"><a href="#about?page=requirements">System Requirements</a></li>
+	<li class="arrow" role="option"><a href="#about?page=homescreen">Bookmark m.ufl.edu</a></li>
+	<li class="arrow" role="option"><a href="#about?page=credits">Credits</a></li>
+	<li class="arrow" role="option"><a href="#feedback">Send us Feedback!</a></li>
+	</ul>
+	<div class="nonfocal legend">
+	<strong>* Important note:</strong> The UF Mobile Web is a free service. Extra data charges may apply when using any website on your mobile device depending on your service plan.
+	</div>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div data-role="page" id="feedback" data-theme="uf">
+	<div id="header" data-role="header" data-backbtn="false">
+	<h1><a href="#main" id="home">UF Mobile</a></h1>
+	</div>
+	<div data-role="content">
+	<div class="focal">
+	<p>Provide your feedback below. If you had trouble finding something or encountered an error, please be as detailed as possible in your description.</p>
+	<form action="/about/index.htmlfeedback.php" method="post">
+	<input type="hidden" name="referrer" value="http://m.ufl.edu/" />
+	<div data-role="formcontain">
+	<label for="message">Your message</label>
+	<textarea name="message" id="message"></textarea>
+	</div><!-- /formcontain -->
+	<div data-role="formcontain">
+	<label for="email">Your email address</label>
+	<input type="text" name="email" id="email"></textarea><br />
+	<p>Your email address is not required, but we ask in case we need to contact you with questions.</p>
+	</div><!-- /formcontain -->
+	<button type="submit" name="submit">Submit</button>
+	</form>
+	</div>
+	</div>
+	<div id="footer" data-role="footer">
+	<ul>
+	<li><a href="#about">About</a></li>
+	<li class="last"><a href="#feedback">Feedback</a></li>
+	</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#rss_news').rssfeed('http://news.ufl.edu/research/feed/', {
+    limit: 3
+  });
+});
+$(document).ready(function () {
+  $('#rss_news_more').rssfeed('http://news.ufl.edu/research/feed/', {
+    limit: 10
+  });
+});
+</script>
+
+</body>
+</html>

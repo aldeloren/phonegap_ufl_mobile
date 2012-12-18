@@ -1,0 +1,442 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/** Home **/
+
+/* Undoing some built-in jQuery styling */
+
+#header {
+	height: 51px;
+}
+#header h1 {
+	margin:0;
+	background-image: url(../images/uf-logo.png);
+	text-indent:-9999px;
+	background-repeat: no-repeat;
+	background-position: 16px center;
+	-webkit-background-size: auto 25px;
+	-moz-background-size: auto 25px;
+	background-size: auto 25px;
+
+}
+
+#header a.ui-btn {
+	position: absolute;
+	top: 11px;
+}
+
+#header a.ui-btn-right {
+	right: 8px;
+	background: #051c62;
+	background-image: -webkit-gradient(linear,left top,left bottom, 
+		color-stop(0,   	#334a9a),   
+		color-stop(1,   	#051c62));
+	border: none;
+	color: #f1f1f1;
+}
+#header a.ui-btn-right:hover {
+	right: 8px;
+	background: #020d2e;
+	background-image: -webkit-gradient(linear,left top,left bottom, 
+		color-stop(0,   	#051c62),   
+		color-stop(1,   	#020d2e));
+	border: none;
+	color: #f1f1f1;
+}
+
+#home {
+	display:block;
+	height: 51px;
+}
+
+#container .ui-content {
+	width:100%;
+	min-height:280px;
+}
+
+#homenav li {
+	padding-bottom: 0;
+	color: #747272;
+	border: 1px solid #d1d1d1;
+}
+
+#homenav small {
+	font-size: 65%;
+	color: #9C9C9C;
+}
+
+#homenav a {
+	font-size: 20px;
+	color: #747272;
+	text-decoration:none;
+
+	line-height: 18px;
+}
+
+#homenav .ui-li, #homenav .ui-btn-inner {
+/* padding-top: 5px; */
+border-top: 0;
+padding-right: -15px;
+}
+
+#homenav .ui-link-inherit {
+padding-bottom: 0;
+}
+
+/*
+#homenav .ui-btn-inner {
+padding-left: 80px;
+padding-top: 10px;
+margin-bottom: -5px;
+padding-right: 40px;
+}
+
+#homenav {
+	width:auto;
+	margin:0 auto 0;
+	padding:0;
+}
+
+#homenav li {
+	position:relative;
+	float:left;
+	width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	list-style:none;
+	text-indent:85px;
+	border-bottom:1px solid #03162E;
+	background-image: url(../images/homescreen-default-button-bg.png);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+}
+#homenav img {
+	position: absolute;
+	right: 20px;
+	top: 1.7em;
+}
+#homenav li.hidden {
+	display:none;
+}
+#homenav span {
+	position: absolute;
+	top: -10px;
+	left: 0;
+}
+#homenav small {
+	font-size: 12px;
+	color: #E6E6E6;
+	position: relative;
+	top: 10px;
+}
+#homenav a {
+	float:left;
+	display:block;
+	width:100%;
+	margin:0;
+	padding:0;
+	font-size:21px;
+	line-height:78px;
+	font-weight:bold;
+	color:#fff;
+	text-decoration:none;
+	text-shadow:#333 -1px 1px 2px;
+	border-bottom:1px solid #2c458e;
+}
+#homenav li:last-child, #homenav li:last-child a {
+	border:none;
+}
+#homenav li a {
+	background-repeat: no-repeat;
+	background-position: 6px center;
+}
+
+
+#home-emergency a {
+	background-image: url(../images/icons/emergency-default.png);
+}
+#home-calendar a {
+	background-image: url(../images/icons/calendar-default.png);
+}
+#home-map a {
+	background-image: url(../images/icons/maps-default.png);
+}
+#home-rts a {
+	background-image: url(../images/icons/rts-default.png);
+}
+#home-people a {
+	background-image: url(../images/icons/people-default.png);
+}
+#home-news a {
+	background-image: url(../images/icons/news-default.png);
+}
+#home-social a {
+	background-image: url(../images/icons/socialMedia-default.png);
+}
+#home-isis a {
+	background-image: url(../images/icons/isis-default.png);
+}
+#home-elearning a {
+	background-image: url(../images/icons/elearning-default.png);
+}
+#home-gatorzone a {
+	background-image: url(../images/icons/athletics-default.png);
+}
+#home-links a {
+	background-image: url(../images/icons/links-default.png);
+}
+#home-feedback a {
+	background-image: url(../images/icons/feedback-default.png);
+}
+*/
+
+
+#footer {
+	background-color: #FF6F0F;
+	font-size: .8em;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	padding: 10px 0 10px 0;
+}
+#footer p {
+	font-size: x-small;
+}
+#footer p, #footer ul {
+	text-align: center;
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+#footer p a, #footer li a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;	
+}
+#footer li {
+	list-style-type: none;
+	display: inline;
+}
+#footer li:after {
+	content: " • ";
+}
+#footer li.last:after {
+	content: "";
+}
+
+/*
+ * Workaround for background not being present after orientation change:
+ * http://forum.jquery.com/topic/recommended-way-to-fill-full-height#14737000001992272
+ */
+.landscape, .landscape .ui-page, .portrait, .portrait .ui-page {
+	min-height: 100%;
+}
+
+/* Used in map module */
+.map-panel-info ul.address {
+	padding: 0;
+}
+
+.map-panel-info ul.address li {
+	list-style-type: none;
+	display: inline;
+}
+
+.map-panel-info ul.address li:after {
+	content:" | ";
+}
+
+.map-panel-info ul.address li.last:after {
+	content:"  ";
+}
+
+#map-container {
+	position: relative;
+	top: -20px;
+}
+
+#map-container h2 {
+	font-size: 1.1em;
+}
+
+#map-overflow {
+position: relative;
+left: -15px;
+}
+
+
+/* New icons */
+
+.ui-icon-phone {
+	background-image: url(../images/action-phone2.png);
+}
+
+
+/* UF jQuery Mobile theme
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-li-thumb, .ui-li-icon {
+left: 15px;
+top: 12px;
+max-height: 36px;
+max-width: 36px;
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
+min-height: 50px;
+}
+.ui-bar-b[role='heading'] { 
+	background: #CBD5F3; 
+	border:none;
+	background-image: -moz-linear-gradient(top, 
+							#002C81, 
+							#000);
+	background-image: -webkit-gradient(linear,left top,left bottom,
+		color-stop(0, 		#000),
+		color-stop(1, 		#333));
+  	-msfilter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#002C81', EndColorStr='#000')";
+	color: #f1f1f1;
+}
+
+.ui-bar-b,
+.ui-bar-uf,
+.people-detail .result .ui-corner-top {
+	border: 1px solid 		#000;
+	background: 			#000579;
+	color: 					#FFF;
+	background-image: -moz-linear-gradient(top, 
+							#CB4D09, 
+							#FD7D00);
+	background-image: -webkit-gradient(linear,left top,left bottom,   
+		color-stop(0,   	#334a9a),   
+		color-stop(1,   	#051c62));
+  	-msfilter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#CB4D09', EndColorStr='#FD7D00')";
+	border-top: #FD7D00 2px solid;
+	text-shadow: none;
+}
+
+/* .people-detail .result .ui-corner-top : adds orange bar to people results - name & occupation */
+
+.ui-bar-uf,
+.ui-bar-uf input,
+.ui-bar-uf select,
+.ui-bar-uf textarea,
+.ui-bar-d button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-bar-uf .ui-link-inherit {
+	color: 					#333;
+}
+.ui-bar-uf .ui-link {
+	color: 					#2489CE;
+	font-weight: bold;
+}
+.ui-body-uf {
+	border: 1px solid 		#000;
+	background: #E9E9E9;
+	background-image: -moz-linear-gradient(top, 
+							#000, 
+							#002C81);
+	background-image: -webkit-gradient(linear,left center,left bottom,   color-stop(0,   white),   color-stop(1,   #CBD5F3));
+  	-msfilter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#000', EndColorStr='#002C81')";
+}
+.ui-body-uf,
+.ui-body-uf input,
+.ui-body-uf select,
+.ui-body-uf textarea,
+.ui-body-uf button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-body-uf .ui-link-inherit {
+	color: 					#444444;
+}
+.ui-body-uf .ui-link {
+	color: 					#2489CE;
+	font-weight: bold;
+}
+.ui-btn-up-uf, .result .ui-body-uf {
+	border: 1px solid rgb(243, 243, 243);
+	font-weight: bold;
+	color: rgb(24, 24, 24);
+	cursor: pointer;
+	text-decoration: none;
+	background-image: -moz-linear-gradient(top, 
+							#0047C3, 
+							#002C81);
+	background-image: -webkit-gradient(linear,left top,left bottom,   color-stop(0,   #fefefe),   color-stop(1,   #F1F1F1));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fceda7', EndColorStr='#002C81')";
+	text-shadow: none;
+}
+.ui-btn-up-uf a.ui-link-inherit {
+	color: #6B6B6B;
+}
+.ui-btn-hover-uf {
+
+	background: 			#fff;
+	font-weight: bold;
+	color: 					#999;
+	border:1px solid #f1f1f1;
+	text-decoration: none;
+	background-image: -moz-linear-gradient(top, 
+							#002C81, 
+							#000);
+	background-image: -webkit-gradient(linear,left top,left bottom,
+		color-stop(0, 		#fff),
+		color-stop(1, 		#fafafa));
+  	-msfilter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#002C81', EndColorStr='#000')";
+	text-shadow: none;
+}
+
+.ui-btn-hover-uf a.ui-link-inherit {
+	color: 					#555;
+}
+.ui-btn-down-uf {
+	border: 1px solid 		#f1f1f1;
+	background: 			#002C81;
+	font-weight: bold;
+	color: 					#999;
+	text-decoration: none;
+	background-image: -moz-linear-gradient(top, 
+							#002C81, 
+							#000);
+	background-image: -webkit-gradient(linear,left top,left bottom,
+		color-stop(0, 		#fff),
+		color-stop(1, 		#f1f1f1));
+  	-msfilter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#002C81', EndColorStr='#000')";
+	text-shadow: none;
+}
+.ui-btn-down-uf a.ui-link-inherit {
+	color: 					#999;
+}
+.ui-btn-up-uf,
+.ui-btn-hover-uf,
+.ui-btn-down-uf {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* end jquery mobile theme */
+
+/* custom jquery mobile additions */
+
+.ui-body-uf p {
+padding-bottom: 1em;
+}
+
+/* override padding to make room for long list items */
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+padding-right: 25px;
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
+padding-left: 62px;
+}
+
+/* High Res replacement images */
+@media all and (-webkit-min-device-pixel-ratio: 1.5),
+all and (min-moz-device-pixel-ratio: 1.5), 
+all and (-o-min-device-pixel-ratio: 1.5), 
+all and (min-device-pixel-ratio: 1.5) {
+#header h1 { background-image: url(../images/uf-logo-2x.png); }
+}
+
+
